@@ -1,36 +1,39 @@
 import { mockData } from './mock/transactions.js';
 
 // ---
-// ESTADO GLOBAL
+// ESTADO GLOBAL DA APLICAÇÃO
 // ---
 let transactions = [...mockData];
-let currentTheme = 'light';
+let currentTheme = localStorage.getItem('theme') || 'light';
 
 // ---
 // SELETORES DO DOM (Constantes - Padrão UPPER_SNAKE_CASE)
 // ---
-const THEME_SWITCHER = document.getElementById('theme-switcher');
+const THEME_SWITCHER_BTN = document.getElementById('theme-switcher');
+const BODY_ELEMENT = document.body;
 
 // ---
-// FUNÇÕES AUXILIARES 
+// MANIPULAÇÃO DO DOM (Renderização)
 // ---
 
 /**
- * Formata uma string de data (YYYY-MM-DD) para o padrão brasileiro (DD/MM/YYYY).
- * @param {string} dateString - A data no formato ISO.
- * @returns {string} A data formatada.
+ * Aplica o tema atual ao body.
  */
-// function formatDate(dateString) { ... }
-
+function applyTheme() {
+    BODY_ELEMENT.setAttribute('data-theme', currentTheme);
+    localStorage.setItem('theme', currentTheme);
+}
 
 // ---
-// MANIPULADORES DE EVENTOS
+// EVENT LISTENERS
 // ---
 
 /**
  * Lida com o clique no botão de trocar o tema (Light/Dark).
  */
-THEME_SWITCHER.addEventListener('click', () => {
+THEME_SWITCHER_BTN.addEventListener('click', () => {
+    currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+    applyTheme();
 });
 
 /**

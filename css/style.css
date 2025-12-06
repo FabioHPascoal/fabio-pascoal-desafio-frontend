@@ -1,13 +1,85 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+/* =========================================
+   VARIÁVEIS E TEMA
+   ========================================= */
+:root {
+    /* Cores do Tema Light */
+    --bg-color: #f4f4f4;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --text-muted: #666666;
+    
+    --primary-color: #333333;
+    --primary-text: #ffffff;
+    
+    --border-color: #dddddd;
+    --input-bg: #ffffff;
+
+    /* Cores que independem do tema */
+    --income-color: #2ecc71;
+    --expense-color: #e74c3c;
+    --accent-color: #3498db;
 }
 
-header {
-    background-color: #333;
-    color: white;
+/* Cores do Tema Dark */
+[data-theme="dark"] {
+    --bg-color: #202020;
+    --card-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --text-muted: #a0a0a0;
+
+    --primary-color: #000000;
+    --primary-text: #e0e0e0;
+
+    --border-color: #333333;
+    --input-bg: #2c2c2c;
+}
+
+/* =========================================
+   RESET E BASE
+   ========================================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+.main-header {
+    background-color: var(--primary-color);
+    color: var(--primary-text);
     padding: 1rem;
-    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.btn-theme {
+    background: transparent;
+    border: 1px solid var(--primary-text);
+    color: var(--primary-text);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-theme:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
