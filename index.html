@@ -22,7 +22,63 @@
     </header>
 
     <main class="container">
+        <section class="toolbar">
+            <div class="search-group">
+                <label for="search-input" class="sr-only">Buscar transação</label>
+                <input type="search" id="search-input" placeholder="Buscar por descrição...">
+                
+                <img src="../assets/lupa.svg" alt="Ícone de busca" class="search-icon">
+            </div>
+
+            <div class="sort-group">
+                <label for="sort-select">Ordenar por:</label>
+                <select id="sort-select">
+                    <option value="date-desc">Data (Mais recentes)</option>
+                    <option value="date-asc">Data (Mais antigas)</option>
+                    <option value="amount-desc">Valor (Maior preço)</option>
+                    <option value="amount-asc">Valor (Menor preço)</option>
+                </select>
+            </div>
+        </section>
+
         <div class="content-wrapper">
+
+            <aside class="form-section">
+                <h2>Nova Transação</h2>
+                <form id="transaction-form">
+                    
+                    <div class="form-group">
+                        <label for="description">Descrição</label>
+                        <input type="text" id="description" name="description" placeholder="Ex: Aluguel, Compras..." required>
+                        <span class="error-msg" id="error-description"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">Valor (R$)</label>
+                        <input type="number" id="amount" name="amount" placeholder="0,00" step="0.01" min="0.01" required>
+                        <span class="error-msg" id="error-amount"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Data</label>
+                        <input type="date" id="date" name="date" required>
+                        <span class="error-msg" id="error-date"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type">Tipo de Transação</label>
+                        <select id="type" name="type" required>
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="income">Entrada (Receita)</option>
+                            <option value="expense">Saída (Despesa)</option>
+                        </select>
+                        <span class="error-msg" id="error-type"></span>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Adicionar Transação</button>
+                </form>
+            </aside>
+
             <section class="list-section">
                 
                 <div class="balance-card">

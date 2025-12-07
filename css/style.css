@@ -1,5 +1,5 @@
 /* =========================================
-   VARIÁVEIS E TEMA
+   1. VARIÁVEIS E TEMA
    ========================================= */
 :root {
     /* Cores do Tema Light */
@@ -35,7 +35,7 @@
 }
 
 /* =========================================
-   RESET E BASE
+   2. RESET E BASE
    ========================================= */
 * {
     box-sizing: border-box;
@@ -51,7 +51,7 @@ body {
 }
 
 /* =========================================
-   HEADER
+   3. HEADER
    ========================================= */
 .main-header {
     background-color: var(--primary-color);
@@ -85,7 +85,7 @@ body {
 }
 
 /* =========================================
-   LAYOUT GERAL
+   4. LAYOUT GERAL
    ========================================= */
 .container {
     max-width: 1200px;
@@ -112,7 +112,114 @@ body {
 }
 
 /* =========================================
-   LISTA DE TRANSAÇÕES
+   5. BARRA DE FERRAMENTAS
+   ========================================= */
+.toolbar {
+    background-color: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border-color);
+}
+
+.search-group, .sort-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+input[type="search"], select {
+    padding: 0.6rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    width: 100%;
+}
+
+.search-icon {
+    position: absolute;
+    right: 0.7rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.25rem;
+    height: 1.25rem;
+    pointer-events: none;
+}
+
+#search-input {
+    width: 100%;
+    padding-right: 3rem;
+}
+
+/* =========================================
+   6. FORMULÁRIO
+   ========================================= */
+.form-section {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    position: sticky;
+    top: 20px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-submit:hover {
+    filter: brightness(0.9);
+}
+
+.error-msg {
+    color: var(--expense-color);
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    display: block;
+    height: 1rem;
+}
+
+/* =========================================
+   7. LISTA DE TRANSAÇÕES
    ========================================= */
 .balance-card {
     background-color: var(--accent-color);
@@ -173,9 +280,29 @@ body {
 .income .amount { color: var(--income-color); }
 .expense .amount { color: var(--expense-color); }
 
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.2s;
+}
+.delete-btn:hover {
+    color: var(--expense-color);
+}
+
 /* =========================================
-   UTILITÁRIOS
+   8. UTILITÁRIOS
    ========================================= */
+.sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
 
 .hidden {
     display: none;
