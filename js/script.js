@@ -94,7 +94,6 @@ function renderList() {
         // Adiciona classes para estilo (income/expense)
         li.classList.add('transaction-item', transaction.type);
         
-        // Determina o sinal (+ ou -) para exibição
         const symbol = transaction.type === 'expense' ? '- ' : '+ ';
 
         li.innerHTML = `

@@ -172,3 +172,11 @@ body {
 
 .income .amount { color: var(--income-color); }
 .expense .amount { color: var(--expense-color); }
+
+/* =========================================
+   UTILITÁRIOS
+   ========================================= */
+
+.hidden {
+    display: none;
+}
