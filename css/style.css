@@ -167,8 +167,13 @@ input[type="search"], select {
     padding: 1.5rem;
     border-radius: 8px;
     border: 1px solid var(--border-color);
-    position: sticky;
-    top: 20px;
+}
+
+@media (min-width: 768px) {
+    .form-section {
+        position: sticky;
+        top: 20px;
+    }
 }
 
 .form-group {
